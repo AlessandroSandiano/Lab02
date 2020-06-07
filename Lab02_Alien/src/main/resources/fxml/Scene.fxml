@@ -55,7 +55,7 @@
                   </ImageView>
                </children>
             </HBox>
-            <TextArea fx:id="textArea" editable="false" text="Welcome to Alien Dictionary v2020">
+            <TextArea fx:id="textArea" editable="false" text="Welcome to Alien Dictionary v2020&#10;(You can't insert more than one question mark)">
                <VBox.margin>
                   <Insets />
                </VBox.margin>

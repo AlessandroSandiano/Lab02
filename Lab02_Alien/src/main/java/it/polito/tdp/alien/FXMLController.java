@@ -25,7 +25,7 @@ public class FXMLController {
 
     @FXML
     void doReset(ActionEvent event) {
-    	textArea.setText("Welcome to Alien Dictionary v2020");
+    	textArea.setText("Welcome to Alien Dictionary v2020\n(You can't insert more than one question mark)");
     	dizionario.getParole().clear();
     	inserting.clear();
     }
@@ -53,14 +53,17 @@ public class FXMLController {
     		dizionario.addWord(alienWord, translation);
     	}
     	else {
-    		if (dizionario.translateWord(inserting.getText()) != null) {
+    		try {if (dizionario.translateWord(inserting.getText()) != null) {
     			WordEnhance w = new WordEnhance (null, dizionario.translateWord(inserting.getText()));
     			textArea.appendText("\n" + w.toString());
     		}
     		else
     			textArea.appendText("\nLa parola inserita non è ancora stata decifrata.");
-    	}
-    		
+    		}
+    		catch (IllegalStateException ise) {
+    			textArea.appendText("\n" + ise.getMessage());
+    		}
+    	}	
     }
 
     @FXML
