@@ -14,14 +14,14 @@ while(True):
 
     txtIn = input()
     # Add input control here!
-    while not (txtIn == "1" or txtIn == "2" or txtIn == "3" or txtIn == "4"):
+    while not (txtIn == "1" or txtIn == "2" or txtIn == "3" or txtIn == "4" or txtIn == "5"):
         print("\nNon è stato digitato nessuno dei numeri previsti dal menù. Riprovare:")
         txtIn = input()
 
     if int(txtIn) == 1:
-        print("\nAggiungi una o più traduzioni, scrivendo per prima la parola da tradurre.")
-        print("Le parole vanno separate con uno spazio e si possono aggiungere al massimo tre traduzioni.")
-        print("Sono ammessi solo caratteri alfabetici.")
+        print("\nAggiungi una o più traduzioni, scrivendo per prima la parola da tradurre.\n"+
+              "Le parole vanno separate con uno spazio e si possono aggiungere al massimo tre traduzioni.\n"+
+              "Sono ammessi solo caratteri alfabetici.")
         txtIn = input()
         while(True):
             counter = 0
@@ -83,4 +83,6 @@ while(True):
         print("Inserire la parola da cercare con Wild Card:")
         t.handleWildCard(input())
     elif int(txtIn) == 4:
+        t.printDictionary("dictionary.txt")
+    elif int(txtIn) == 5:
         break
